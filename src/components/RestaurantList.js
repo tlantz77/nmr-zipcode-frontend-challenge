@@ -1,5 +1,5 @@
 import React from 'react';
-import RestaurantCard from './restaurantCard';
+import RestaurantCard from './RestaurantCard';
 
 const RestaurantList = props => {
   const restaurants = props.restaurants.map(restaurant => {

@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import zipcodes from '../api/zipcodes';
 import SearchBar from './SearchBar';
-// import RestaurantList from './RestaurantList';
+import RestaurantList from './RestaurantList';
 
 class App extends Component {
   state = { restaurants: [] };
@@ -10,7 +10,6 @@ class App extends Component {
     const response = await zipcodes.get('', {
       params: { zipcode: zipcode }
     });
-    console.log(response.data.results);
     this.setState({ restaurants: response.data.results }) 
   }
 
@@ -18,7 +17,7 @@ class App extends Component {
     return (
       <div className='ui container' style={{ marginTop: '10px' }}>
         <SearchBar onSubmit={ this.onSearchSubmit } />
-        {/* <RestaurantList restaurants={ this.state.restaurants } /> */}
+        <RestaurantList restaurants={ this.state.restaurants } />
       </div>
     );
   }
